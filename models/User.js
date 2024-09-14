@@ -21,6 +21,7 @@ const UserSchema = new Schema(
     state: { type: String, trim: true },
     country: { type: String, trim: true },
     doneQuestinoaire: { type: Boolean, default: false },
+    vibe: { type: String, trim: true },
   },
   { timestamps: true }
 );
