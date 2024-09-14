@@ -52,6 +52,7 @@ exports.loginUser = async (req, res) => {
         username: user.username,
         email: user.email,
         doneQuestinoaire: user.doneQuestinoaire,
+        vibe: vibe,
       },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
@@ -66,7 +67,10 @@ exports.loginUser = async (req, res) => {
 // Get all users
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find({}, 'profile_picture_url username email _id');
+    const users = await User.find(
+      {},
+      'profile_picture_url username email _id vibe'
+    );
     res.status(200).json(users);
   } catch (error) {
     res.status(400).json({ error: error.message });

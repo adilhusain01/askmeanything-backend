@@ -10,8 +10,6 @@ exports.createQuestionnaire = async (req, res) => {
       return res.status(400).json({ error: 'Invalid data' });
     }
 
-    console.log(questions);
-
     const questionnaire = new Questionnaire({ user, questions });
     await questionnaire.save();
     res.status(201).json(questionnaire);
