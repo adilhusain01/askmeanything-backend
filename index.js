@@ -8,22 +8,18 @@ require('dotenv').config();
 const cors = require('cors');
 const { logger } = require('./middlewares/logEvents.js');
 
-// Connect to database
 connectDB();
 
 app.use(cors());
 app.use(logger);
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
 app.use('/api', userRoutes);
 app.use('/api', questionnaireRoutes);
 app.use('/api', authRoute);
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });

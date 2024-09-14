@@ -1,11 +1,9 @@
 const Questionnaire = require('../models/Questionnaire');
 
-// Create a new questionnaire
 exports.createQuestionnaire = async (req, res) => {
   try {
     const { user, questions } = req.body;
 
-    // Ensure that `user` and `questions` are provided and valid
     if (!user || !Array.isArray(questions)) {
       return res.status(400).json({ error: 'Invalid data' });
     }
@@ -18,7 +16,6 @@ exports.createQuestionnaire = async (req, res) => {
   }
 };
 
-// Get a questionnaire by user ID
 exports.getQuestionnaireByUserId = async (req, res) => {
   try {
     const questionnaire = await Questionnaire.findOne({
@@ -33,12 +30,10 @@ exports.getQuestionnaireByUserId = async (req, res) => {
   }
 };
 
-// Update a questionnaire by ID
 exports.updateQuestionnaire = async (req, res) => {
   try {
     const { user, questions } = req.body;
 
-    // Ensure that `questions` is an array if provided
     if (questions && !Array.isArray(questions)) {
       return res.status(400).json({ error: 'Invalid questions data' });
     }
@@ -57,7 +52,6 @@ exports.updateQuestionnaire = async (req, res) => {
   }
 };
 
-// Delete a questionnaire by ID
 exports.deleteQuestionnaire = async (req, res) => {
   try {
     const questionnaire = await Questionnaire.findByIdAndDelete(req.params.id);

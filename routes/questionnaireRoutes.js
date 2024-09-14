@@ -3,7 +3,6 @@ const router = express.Router();
 const questionnaireController = require('../controllers/questionnaireController');
 const authenticateToken = require('../middlewares/authMiddleware');
 
-// Public Routes
 router.post(
   '/questionnaires',
   authenticateToken,

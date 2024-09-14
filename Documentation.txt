@@ -1,0 +1,29 @@
+Features => 
+    Interactive Terminal: A refined agent that handles user details and questionnaire choices.
+    HeadShot Generator: Upload multiple images to generate professional headshots.
+    Vibes: Persona prompts such as emotions (e.g., Cool, Rizz) or personalities (e.g., Robert Downey, Kunal Kamra).
+
+Scope => 
+    Integrate as a service in dating apps.
+    Deploy as an individual platform.
+    Use as a digital persona with a bot link in Instagram or Twitter bios for quick introductions.
+
+Frontend =>
+    Extras: On-Demand Agent API
+    Tech Stack: React, Tailwind CSS
+    Libraries ->
+        PostCSS & Autoprefixer (CSS processing)
+        Axios (Data handling)
+        JWT-Decode (Token decoding)
+        Zod (Schema validation)
+        Material UI (Components and icons)
+        React-Router-Dom (Routing)
+        React-Toastify (Notifications)
+
+Backend => 
+    Tech Stack: Node.js & Express.js, MongoDB
+    Libraries:
+        Bcrypt (Password hashing)
+        Jsonwebtoken (Token creation and validation)
+        Mongoose (MongoDB schema management)
+        Nodemon (Server monitoring)
