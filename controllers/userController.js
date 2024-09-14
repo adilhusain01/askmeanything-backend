@@ -52,7 +52,7 @@ exports.loginUser = async (req, res) => {
         username: user.username,
         email: user.email,
         doneQuestinoaire: user.doneQuestinoaire,
-        vibe: vibe,
+        vibe: user.vibe,
       },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
