@@ -44,6 +44,7 @@ exports.loginUser = async (req, res) => {
         email: user.email,
         doneQuestinoaire: user.doneQuestinoaire,
         vibe: user.vibe,
+        gender: user.gender,
       },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
